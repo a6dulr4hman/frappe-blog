@@ -1,0 +1,7 @@
+{
+    "name": "ghost_frappe",
+    "version": "0.0.1",
+    "description": "A professional, headless-ready blogging platform on Frappe.",
+    "author": "Ghost Architect",
+    "license": "MIT"
+}
