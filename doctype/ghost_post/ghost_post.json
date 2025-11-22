@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:slug",
+ "creation": "2025-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "slug",
+  "excerpt",
+  "feature_image",
+  "status",
+  "published_at",
+  "visibility",
+  "section_break_content",
+  "content",
+  "section_break_meta",
+  "authors",
+  "tags",
+  "section_break_seo",
+  "seo_title",
+  "seo_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "Slug",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "excerpt",
+   "fieldtype": "Small Text",
+   "label": "Excerpt"
+  },
+  {
+   "fieldname": "feature_image",
+   "fieldtype": "Attach Image",
+   "label": "Feature Image"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nScheduled\nPublished\nArchived",
+   "reqd": 1
+  },
+  {
+   "fieldname": "published_at",
+   "fieldtype": "Datetime",
+   "label": "Published At"
+  },
+  {
+   "default": "Public",
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "label": "Visibility",
+   "options": "Public\nMembers Only\nPaid Members Only"
+  },
+  {
+   "fieldname": "section_break_content",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Code",
+   "label": "Content (JSON)",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "section_break_meta",
+   "fieldtype": "Section Break",
+   "label": "Meta"
+  },
+  {
+   "fieldname": "authors",
+   "fieldtype": "Table MultiSelect",
+   "label": "Authors",
+   "options": "Ghost Post Author"
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Table MultiSelect",
+   "label": "Tags",
+   "options": "Ghost Post Tag"
+  },
+  {
+   "fieldname": "section_break_seo",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "fieldname": "seo_title",
+   "fieldtype": "Data",
+   "label": "SEO Title"
+  },
+  {
+   "fieldname": "seo_description",
+   "fieldtype": "Small Text",
+   "label": "SEO Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ghost",
+ "name": "Ghost Post",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Ghost Writer",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Ghost Editor",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Guest"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

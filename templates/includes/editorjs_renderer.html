@@ -1,0 +1,59 @@
+{% macro render_editorjs(content_json) %}
+    {% if content_json %}
+        {% set data = json.loads(content_json) %}
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+            {% for block in data.blocks %}
+                {% if block.type == 'header' %}
+                    <h{{ block.data.level }} class="font-bold text-gray-900 dark:text-white mb-4 mt-6">
+                        {{ block.data.text | safe }}
+                    </h{{ block.data.level }}>
+                
+                {% elif block.type == 'paragraph' %}
+                    <p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {{ block.data.text | safe }}
+                    </p>
+                
+                {% elif block.type == 'list' %}
+                    {% if block.data.style == 'ordered' %}
+                        <ol class="list-decimal list-inside mb-4 space-y-2">
+                    {% else %}
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                    {% endif %}
+                        {% for item in block.data.items %}
+                            <li>{{ item | safe }}</li>
+                        {% endfor %}
+                    {% if block.data.style == 'ordered' %}
+                        </ol>
+                    {% else %}
+                        </ul>
+                    {% endif %}
+                
+                {% elif block.type == 'image' %}
+                    <figure class="my-8">
+                        <img src="{{ block.data.file.url }}" alt="{{ block.data.caption or '' }}" class="rounded-lg shadow-md w-full object-cover">
+                        {% if block.data.caption %}
+                            <figcaption class="text-center text-sm text-gray-500 mt-2">{{ block.data.caption | safe }}</figcaption>
+                        {% endif %}
+                    </figure>
+                
+                {% elif block.type == 'quote' %}
+                    <blockquote class="border-l-4 border-accent pl-4 italic my-6 text-gray-800 dark:text-gray-200">
+                        "{{ block.data.text | safe }}"
+                        {% if block.data.caption %}
+                            <cite class="block text-sm not-italic mt-2 text-gray-600">- {{ block.data.caption | safe }}</cite>
+                        {% endif %}
+                    </blockquote>
+
+                {% elif block.type == 'delimiter' %}
+                    <div class="flex justify-center my-8 text-2xl tracking-widest text-gray-400">***</div>
+
+                {% elif block.type == 'embed' %}
+                    <div class="my-8 aspect-w-16 aspect-h-9">
+                        <iframe src="{{ block.data.embed }}" frameborder="0" allowfullscreen class="w-full h-full rounded-lg"></iframe>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}
