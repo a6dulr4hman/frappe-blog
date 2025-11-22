@@ -1,9 +1,11 @@
 from setuptools import setup, find_packages
+import re
 
 with open("requirements.txt") as f:
 	install_requires = f.read().strip().split("\n")
 
-from ghost_frappe import __version__ as version
+with open("ghost_frappe/__init__.py") as f:
+	version = re.search(r'^__version__\s*=\s*"(.*)"', f.read(), re.M).group(1)
 
 setup(
 	name="ghost_frappe",
