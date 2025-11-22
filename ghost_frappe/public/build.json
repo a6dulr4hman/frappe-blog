@@ -1,5 +1,0 @@
-{
-    "include_js": [
-        "public/js/ghost_frappe.bundle.js"
-    ]
-}

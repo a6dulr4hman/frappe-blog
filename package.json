@@ -3,5 +3,11 @@
     "version": "0.0.1",
     "description": "A professional, headless-ready blogging platform on Frappe.",
     "author": "Ghost Architect",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "@editorjs/editorjs": "^2.28.0",
+        "@editorjs/header": "^2.7.0",
+        "@editorjs/image": "^2.8.1",
+        "@editorjs/list": "^1.8.0"
+    }
 }
