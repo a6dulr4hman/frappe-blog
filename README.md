@@ -6,7 +6,7 @@ A professional, headless-ready blogging platform on the Frappe Framework.
 
 1.  Get the app:
     ```bash
-    bench get-app ghost_frappe https://github.com/yourusername/ghost_frappe
+    bench get-app ghost_frappe https://github.com/a6dulr4hman/frappe-blog
     ```
 
 2.  Install the app on your site:
