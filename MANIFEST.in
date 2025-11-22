@@ -15,4 +15,5 @@ recursive-include ghost_frappe *.png
 recursive-include ghost_frappe *.py
 recursive-include ghost_frappe *.svg
 recursive-include ghost_frappe *.txt
+recursive-include ghost_frappe *.vue
 recursive-exclude ghost_frappe *.pyc
